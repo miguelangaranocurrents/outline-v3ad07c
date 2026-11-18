@@ -410,6 +410,9 @@ class UiStore {
       this.secondaryRightSidebar = panel;
     } else {
       this.rightSidebar = panel;
+      // The primary pane's panel is persisted, so keep storage in step with
+      // it. Otherwise a stale panel is restored on the next reload.
+      this.persist();
     }
   };
 
